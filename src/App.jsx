@@ -20,16 +20,16 @@ function App() {
         setIsFinished(true);
       } else {
         setPreguntaActual(preguntaActual + 1);
-        setTiempoRestante(10);
+        setTiempoRestante(15);
       }
-    }, 1500);
+    }, 300);
   }
 
   useEffect(() => {
     const intervalo = setInterval(() => {
       if (tiempoRestante > 0) setTiempoRestante((prev) => prev - 1);
       if (tiempoRestante === 0) setAreDisabled(true);
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(intervalo);
   }, [tiempoRestante]);
